@@ -1,0 +1,51 @@
+{
+  "TerugMeldingHeader": {
+    "RegistratieNaam": "Basisregistratie Personen",
+    "BasisRegistratieCode": "BRP",
+    "melder": {
+      "naam": "Bas Kooij",
+      "telefoon": "+31644730994",
+      "email": "bas.kooij@logius.nl",
+      "bedrijf": "Logius"
+    },
+    "datumMelding": "2024-04-03",
+    "referentiekenmerk": "DGM001",
+    "peilmoment": "2024-04-03T10:42:37.146Z"
+  },
+  "TerugMeldingBody": [
+    {
+      "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
+      "gegevensElementSleutelWaarde": "987463264",
+      "gegevensElementNaam": "Binnenlands adres ingezetene",
+      "attribuut": "huisnummer",
+      "attribuutUrn": "urn:brp:persoon:binnenlands-adres-ingezetene:huisnummer",
+      "betwijfeldeWaarde": "23",
+      "voorgesteldeWaarde": "21",
+      "bijlages": [
+        {
+          "bestandsnaam": "image001.jpg",
+          "mimeType": "image/jpeg",
+          "bijlageData": "2984a720393290b4d2390",
+          "beschrijving": "screenshot"
+        }
+      ]
+    },
+    {
+      "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
+      "gegevensElementSleutelWaarde": "987463264",
+      "gegevensElementNaam": "Nationaliteit ingezetene",
+      "attribuut": "nationaliteit",
+      "attribuutUrn": "urn:brp:persoon:nationaliteit-ingezetene:huisnummer",
+      "betwijfeldeWaarde": "DE",
+      "voorgesteldeWaarde": "NL",
+      "bijlages": []
+    }
+  ],
+  "TerugMeldingResponse":
+  {
+    "terugMeldingReferentie": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "referentiekenmerk": "DGM001",
+    "status": "Gemeld",
+    "beschrijving": "Uw melding wordt binnen 5 werkdagen in behandeling genomen."
+  }
+}
