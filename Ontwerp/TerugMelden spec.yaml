@@ -1,63 +1,78 @@
-
 openapi: 3.1.0
 info:
-  title: Terugmeldingen Standaard 
-  description: Specificatie voor terugmelden op overheidsregistraties 
+  title: Terugmeldingen Standaard
+  description: Specificatie voor terugmelden op overheidsregistraties
   version: '0.1'
 paths:
   /terugmelding:
     get:
-      parameters: 
+      parameters:
         - name: terugMeldingReferentie
           schema:
             type: string
             format: uuid
       responses:
-        '200': 
+        '200':
           description: ''
           content:
-            application/json: 
-              schema:          
+            application/json:
+              schema:
                 $ref: '#/components/schemas/Ontvangen'
     post:
-      requestBody: 
+      requestBody:
         content:
-          application/json: 
-            schema:          
+          application/json:
+            schema:
               $ref: '#/components/schemas/TerugMelding'
       responses:
-        '200': 
+        '200':
           description: ''
           content:
-            application/json: 
-              schema:          
+            application/json:
+              schema:
                 $ref: '#/components/schemas/Ontvangen'
 components:
   schemas:
     TerugMelding:
       type: object
-      properties: 
-        TerugMeldingHeader:
+      properties:
+        terugMeldingHeader:
           $ref: '#/components/schemas/TerugMeldingHeader'
-        TerugMeldingBody:
-          type: array
-          minItems: 1
-          items:
-            $ref: '#/components/schemas/TerugMeldingGegeven'
+        terugMeldingBody:
+          type: object
+          properties:
+            gegevensElementSleutelUrn:
+              description: >-
+                De unieke verwijzing naar de sleutel van het hoofdelement waar
+                de wijziging in plaats moet vinden. (bijv: urn:brp:persoon:bsn).
+              type: string
+            gegevensElementSleutelWaarde:
+              description: >-
+                De inhoud van het veld gespecificeerd in
+                gegevensElementSleutelUrn.
+              type: string
+            terugMeldingGegevens:
+              type: array
+              minItems: 1
+              items:
+                $ref: '#/components/schemas/TerugMeldingGegeven'
     TerugMeldingHeader:
       type: object
-      properties: 
+      properties:
         RegistratieNaam:
           type: string
         BasisRegistratieCode:
-          description: 'Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).'
+          description: >-
+            Code (maximaal 3 letterig) waarmee de basisregistratie wordt
+            aangeduid wanneer de houder van een landelijke voorziening meer dan
+            1 basisregistratie beheert (bv BRT, BGT).
           type: string
           oneOf:
             - title: Basisregistratie Personen
               const: BRP
             - title: Basisregistratie Adressen en Gebouwen
               const: BAG
-            - title: Handelsregister 
+            - title: Handelsregister
               const: HR
             - title: Basisregistratie Kadaster
               const: BRK
@@ -73,36 +88,37 @@ components:
               const: BRO
             - title: Basisregistratie Inkomen
               const: BRI
-        melder: 
+        melder:
           type: object
           $ref: '#/components/schemas/ContactInformatie'
         datumMelding:
           type: string
           format: date
         peilmoment:
-          description: 'Datum en tijd waarop de waarneming is gedaan.'
+          description: Datum en tijd waarop de waarneming is gedaan.
           type: string
           format: date-time
         referentiekenmerk:
-          description: 'Een eigen kenmerk voor de terugmelding van de melder.'
+          description: Een eigen kenmerk voor de terugmelding van de melder.
           type: string
     TerugMeldingGegeven:
       type: object
-      properties: 
-        gegevensElementSleutelUrn:
-          description: 'De unieke verwijzing naar de sleutel van het hoofdelement waar de wijziging in plaats moet vinden. (bijv: urn:brp:persoon:bsn).'
-          type: string 
-        gegevensElementSleutelWaarde:
-          description: 'De inhoud van het veld gespecificeerd in gegevensElementSleutelUrn.'
-          type: string 
+      properties:
         gegevensElementNaam:
-          description: 'Een eventueel subelement/object waar de wijziging in plaats moet vinden. Gebruik dit als de gegevensElementSleutel hoort bij een ander element dan waar de wijziging moet plaats vinden. (bijv: sleutel hoort bij bedrijf, melding heeft betrekking op bedrijf/adres)'
-          type: string 
+          description: >-
+            Een eventueel subelement/object waar de wijziging in plaats moet
+            vinden. Gebruik dit als de gegevensElementSleutel hoort bij een
+            ander element dan waar de wijziging moet plaats vinden. (bijv:
+            sleutel hoort bij bedrijf, melding heeft betrekking op
+            bedrijf/adres)
+          type: string
         attribuut:
-          description: 'De naam van het attribuut (huisnummer, beschrijving, achternaam).'
+          description: De naam van het attribuut (huisnummer, beschrijving, achternaam).
           type: string
         attribuutUrn:
-          description: 'De unieke verwijzing naar het attribuut wat gewijzigd moet worden (bijv. urn:brp:persoon:binnenlands-adres-ingezetene:huisnummer).'
+          description: >-
+            De unieke verwijzing naar het attribuut wat gewijzigd moet worden
+            (bijv. urn:brp:persoon:binnenlands-adres-ingezetene:huisnummer).
           type: string
         betwijfeldeWaarde:
           type: string
@@ -110,7 +126,7 @@ components:
           type: string
         bijlages:
           type: array
-          items: 
+          items:
             $ref: '#/components/schemas/Bijlage'
     ContactInformatie:
       type: object
@@ -119,10 +135,10 @@ components:
           type: string
         telefoon:
           type: string
-          pattern: '^[0-9+-]{8,20}$'
+          pattern: ^[0-9+-]{8,20}$
         email:
           type: string
-          pattern: '^.+@.+\..+$'
+          pattern: ^.+@.+\..+$
         bedrijf:
           type: string
     Bijlage:
@@ -134,27 +150,32 @@ components:
           type: string
         mimeType:
           type: string
-          oneOf: 
-            - title: 'application/pdf'
-            - title: 'image/jpeg'
+          oneOf:
+            - title: application/pdf
+            - title: image/jpeg
         bijlageData:
-          description: 'Het bestand zelf in Base64-binary encoding.'
+          description: Het bestand zelf in Base64-binary encoding.
           type: string
     Ontvangen:
-      description: 'Terugmelding ontvangen'
+      description: Terugmelding ontvangen
       type: object
       properties:
         terugMeldingReferentie:
-          description: 'Een door de ontvangende partij gegenereerde referentie van de TerugMelding'
+          description: >-
+            Een door de ontvangende partij gegenereerde referentie van de
+            TerugMelding
           type: string
           format: uuid
         referentieKenmerk:
-          description: 'De door de meldende partij opgegeven referentie'
+          description: De door de meldende partij opgegeven referentie
           type: string
-        status: 
-          description: 'Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).'
+        status:
+          description: >-
+            Code (maximaal 3 letterig) waarmee de basisregistratie wordt
+            aangeduid wanneer de houder van een landelijke voorziening meer dan
+            1 basisregistratie beheert (bv BRT, BGT).
           type: string
-          oneOf: 
+          oneOf:
             - title: Gemeld
             - title: In Behandeling
             - title: Ingepland
@@ -162,7 +183,5 @@ components:
             - title: Onvoldoende ContactInformatie
             - title: Afgehandeld
         beschrijving:
-          description: 'Aanvullende informatie over de terugmelding'
+          description: Aanvullende informatie over de terugmelding
           type: string
-  
-    
