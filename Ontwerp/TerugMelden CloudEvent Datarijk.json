@@ -1,0 +1,50 @@
+{
+    "id": "f3dce042-cd6e-4977-844d-05be8dce7cea",
+    "specversion" : "0.1",
+    "type" : "nl.forumstandaardisatie.open-standaarden.terugmelding",
+    "source" : "urn:nld:id:00000001823288444000:terugmelder",
+    "subject": "123456789",
+    "time": "2024-04-03T17:31:00Z",
+
+    "registratieNaam": "Basisregistratie Personen",
+    "basisregistratiecode": "BRP",
+    "referentiekenmerk": "DGM001",
+    "peilmoment": "2024-04-03T10:42:37.146Z",
+
+    "meldernaam": "Bas Kooij",
+    "meldertelefoon": "+31644730994",
+    "melderemail": "bas.kooij@logius.nl",
+    "melderbedrijf": "Logius",
+
+    "datacontenttype": "application/json",
+    "dataref" : "",
+    "data" : {
+        "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
+        "gegevensElementSleutelWaarde": "987463264",
+        "terugMeldingGegevens": [
+            {
+                "gegevensElementNaam": "Binnenlands adres ingezetene",
+                "attribuut": "huisnummer",
+                "attribuutUrn": "urn:brp:persoon:binnenlands-adres-ingezetene:huisnummer",
+                "betwijfeldeWaarde": "23",
+                "voorgesteldeWaarde": "21",
+                "bijlages": [
+                    {
+                        "bestandsnaam": "image001.jpg",
+                        "mimeType": "image/jpeg",
+                        "bijlageData": "2984a720393290b4d2390",
+                        "beschrijving": "screenshot"
+                    }
+                ]
+            },
+            {
+                "gegevensElementNaam": "Nationaliteit ingezetene",
+                "attribuut": "nationaliteit",
+                "attribuutUrn": "urn:brp:persoon:nationaliteit-ingezetene:huisnummer",
+                "betwijfeldeWaarde": "DE",
+                "voorgesteldeWaarde": "NL",
+                "bijlages": []
+            }
+        ]
+    }
+}

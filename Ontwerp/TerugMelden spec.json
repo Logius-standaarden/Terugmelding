@@ -88,10 +88,10 @@
       "TerugMeldingHeader": {
         "type": "object",
         "properties": {
-          "RegistratieNaam": {
+          "registratieNaam": {
             "type": "string"
           },
-          "BasisRegistratieCode": {
+          "basisRegistratieCode": {
             "description": "Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).",
             "type": "string",
             "oneOf": [

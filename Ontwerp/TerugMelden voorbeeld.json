@@ -1,7 +1,7 @@
 {
   "terugMeldingHeader": {
-    "RegistratieNaam": "Basisregistratie Personen",
-    "BasisRegistratieCode": "BRP",
+    "registratieNaam": "Basisregistratie Personen",
+    "basisRegistratieCode": "BRP",
     "melder": {
       "naam": "Bas Kooij",
       "telefoon": "+31644730994",
@@ -13,9 +13,9 @@
     "peilmoment": "2024-04-03T10:42:37.146Z"
   },
   "terugMeldingBody": {
-      "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
-      "gegevensElementSleutelWaarde": "987463264",
-      "terugMeldingGegevens": [
+    "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
+    "gegevensElementSleutelWaarde": "987463264",
+    "terugMeldingGegevens": [
       {
         "gegevensElementNaam": "Binnenlands adres ingezetene",
         "attribuut": "huisnummer",
