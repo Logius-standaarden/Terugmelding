@@ -12,11 +12,7 @@ Voor een terugmelding op de basisregistraties was de [Digimelding Koppelvlakspec
 2. **De standaard is gericht op automatische berichtverwerking**. Voor breed gebruikte registraties is het handig als terugmeldingen door systemen verwerkt kunnen worden. Voor registraties met minder terugmeldingen blijft het mogelijk om terugmeldingen volgens een afspraak in te vullen. Een bronhouder kan ervoor kiezen om terugmeldingen via email te accpeteren. Terugmeldingen volgens afspraken vallen buiten de scope van deze standaard. 
 3. **Voor het aangeven om welk gegeven het gaat wordt gebruik gemaakt van een URN van het gegeven**. Om gegevens op een uniforme manier aan te duiden maken we bij voorkeur gebruik van een URI. Volgens linked data principes worden objecten aangeduid met een eenduidige URI waarmee ze online te vinden zijn. We kiezen hier voor een bredere optie: door URNs te gebruiken kunnen gegevens in (basis)registraties ook eenduidig aangeduid worden die objecten (nog) niet online te vragen zijn.
 
-### Architectuur
-
-![Architectuur](Digimelding.png) 
-
-### JSON specificaties en voorbeelden
+## JSON specificaties en voorbeelden
 
 Specificaties en voorbeelden voor de berichten in vernieuwd terugmelden. 
 
