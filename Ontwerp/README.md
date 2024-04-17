@@ -16,6 +16,12 @@ Voor een terugmelding op de basisregistraties was de [Digimelding Koppelvlakspec
 
 ![Architectuur](Digimelding.png) 
 
-### JSON
-- [specificatie](TerugMelden%20spec.json)
-- [voorbeeld](TerugMelden%20voorbeeld.json)
+### JSON specificaties en voorbeelden
+
+Specificaties en voorbeelden voor de berichten in vernieuwd terugmelden. 
+
+- [terugmeldingsbericht specificatie](TerugMelden%20spec.json)
+- [terugmeldingsbericht voorbeeld](TerugMelden%20voorbeeld.json)
+- [response op een terugmeldingsbericht](TerugMeldenResponse%20voorbeeld.json) 
+- [notificatie voor terugmelden informatiearm](TerugMelden%20CloudEvent%20Dataarm.json)
+- [notificatie terugmelden informatierijk](TerugMelden%20CloudEvent%20Datarijk.json)
