@@ -28,7 +28,7 @@ Specificaties en voorbeelden voor de berichten in vernieuwd terugmelden.
 2. Harmoniseren van gebruikte termen in het berichtenontwerp met de begrippen die kader van stelselcatalogus worden gebruikt.
 3. Ontwerp delen met leden van het TO Terugmelden, reacties en ideen ophalen.
 
-We kunnen de TO Terugmelding leden een aantal vragen voorleggen.
+We leggen de TO Terugmelding leden een aantal keuzes voor:
  1. Keuzes voor een mogelijke standaard
     - terugmeldbericht in json
     - terugmeldbericht opnemen in een CloudEvents notificatie
