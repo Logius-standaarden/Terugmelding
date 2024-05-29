@@ -6,19 +6,21 @@
     "subject": "123456789",
     "time": "2024-04-03T17:31:00Z",
 
-    "registratieNaam": "Basisregistratie Personen",
-    "basisregistratiecode": "BRP",
-    "referentiekenmerk": "DGM001",
-    "peilmoment": "2024-04-03T10:42:37.146Z",
-
-    "meldernaam": "Bas Kooij",
-    "meldertelefoon": "+31644730994",
-    "melderemail": "bas.kooij@logius.nl",
-    "melderbedrijf": "Logius",
-
     "datacontenttype": "application/json",
     "dataref" : "",
     "data" : {
+        "melder": {
+            "naam": "Bas Kooij",
+            "telefoon": "+31644730994",
+            "email": "bas.kooij@logius.nl",
+            "bedrijf": "Logius"
+        },
+
+        "registratieNaam": "Basisregistratie Personen",
+        "basisregistratiecode": "BRP",
+        "referentiekenmerk": "DGM001",
+        "peilmoment": "2024-04-03T10:42:37.146Z",
+
         "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
         "gegevensElementSleutelWaarde": "987463264",
         "terugMeldingGegevens": [

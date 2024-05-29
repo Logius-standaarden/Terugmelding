@@ -6,16 +6,6 @@
     "subject": "123456789",
     "time": "2024-04-03T17:31:00Z",
 
-    "registratieNaam": "Basisregistratie Personen",
-    "basisregistratiecode": "BRP",
-    "referentiekenmerk": "DGM001",
-    "peilmoment": "2024-04-03T10:42:37.146Z",
-
-    "meldernaam": "Bas Kooij",
-    "meldertelefoon": "+31644730994",
-    "melderemail": "bas.kooij@logius.nl",
-    "melderbedrijf": "Logius",
-
     "datacontenttype": "application/json",
     "dataref" : "https://gemeenteX/api/persoon/987463264",
     "data" : ""
