@@ -15,26 +15,20 @@ Voor een terugmelding op de basisregistraties was de [Digimelding Koppelvlakspec
 
 ## JSON specificaties en voorbeelden
 
-Specificaties en voorbeelden voor de berichten in vernieuwd terugmelden. Naast voorbeelden voor een (minimaal) terugmeldbericht zijn twee voorbeelden op basis van ibedding in een CloudEvents notificatie gegeven: informatierijk en informatiearm. 
+Specificaties en voorbeelden voor de berichten in vernieuwd terugmelden.
 
 - [terugmeldingsbericht specificatie](TerugMelden%20spec.json)
 - [terugmeldingsbericht voorbeeld](TerugMelden%20voorbeeld.json)
-- [response op een terugmeldingsbericht](TerugMeldenResponse%20voorbeeld.json) 
-- [notificatie voor terugmelden informatiearm](TerugMelden%20CloudEvent%20Dataarm.json)
-- [notificatie terugmelden informatierijk](TerugMelden%20CloudEvent%20Datarijk.json)
+- [response op een terugmeldingsbericht](TerugMeldenResponse%20voorbeeld.json)
 
 ## Vervolgstappen
 
 1. Harmoniseren van gebruikte termen in het berichtenontwerp met de begrippen die kader van stelselcatalogus worden gebruikt.
-2. Ontwerp delen met leden van het TO Terugmelden, reacties en ideen ophalen. 
-3. Keuze tussen mogelijke berichtopties: minimaal of CloudEvents en informatierijk of informatiearm.
+2. Ontwerp delen met leden van het TO Terugmelden, reacties en ideen ophalen.
 
 ### Keuzes en opties
 
- 1. Keuzes voor een mogelijke standaard
-    - terugmeldbericht in json
-    - terugmeldbericht opnemen in een CloudEvents notificatie
-2. Keuzes voor een mogelijke dienst
-    - ontsluiting van terugmeldingen via een webinterface voor kleine registraties, mogelijkheid van downloaden van terugmeldingen.
+Keuzes voor een mogelijke dienst
+  - ontsluiting van terugmeldingen via een webinterface voor kleine registraties, mogelijkheid van downloaden van terugmeldingen.
 
 Grote registraties kunnen zelf een API koppelvlak aanbieden en maken geen gebruik van een terugmelddienst.
