@@ -1,7 +1,11 @@
 {
-  "TerugMeldingHeader": {
-    "RegistratieNaam": "Basisregistratie Personen",
-    "BasisRegistratieCode": "BRP",
+  "terugMeldingHeader": {
+    "registratie": {
+      "naam": "Basisregistratie Personen",
+      "code": "BRP",
+      "houder": "RVIG",
+      "basisRegistratieCode": "BRP"
+    },
     "melder": {
       "naam": "Bas Kooij",
       "telefoon": "+31644730994",
@@ -10,42 +14,57 @@
     },
     "datumMelding": "2024-04-03",
     "referentiekenmerk": "DGM001",
-    "peilmoment": "2024-04-03T10:42:37.146Z"
+    "peilmoment": "2024-04-03T10:42:37.146Z",
+    "meldingBron": "Digimelding portaal"
   },
-  "TerugMeldingBody": [
-    {
-      "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
-      "gegevensElementSleutelWaarde": "987463264",
-      "gegevensElementNaam": "Binnenlands adres ingezetene",
-      "attribuut": "huisnummer",
-      "attribuutUrn": "urn:brp:persoon:binnenlands-adres-ingezetene:huisnummer",
-      "betwijfeldeWaarde": "23",
-      "voorgesteldeWaarde": "21",
-      "bijlages": [
-        {
-          "bestandsnaam": "image001.jpg",
-          "mimeType": "image/jpeg",
-          "bijlageData": "2984a720393290b4d2390",
-          "beschrijving": "screenshot"
-        }
+  "terugMeldingBody": {
+    "objectIdentificatie": [
+      {
+        "objectType": "persoon",
+        "attribuutUrn": "urn:brp:persoon:bsn",
+        "idWaarde": "987463264"
+      },
+      {
+        "objectType": "persoon",
+        "attribuutUrn": "urn:brp:persoon:geboortedatum",
+        "idWaarde": "1981-02-19"
+      }
+    ],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        1234124.12312,
+	      7082313.12899
       ]
     },
-    {
-      "gegevensElementSleutelUrn": "urn:brp:persoon:bsn",
-      "gegevensElementSleutelWaarde": "987463264",
-      "gegevensElementNaam": "Nationaliteit ingezetene",
-      "attribuut": "nationaliteit",
-      "attribuutUrn": "urn:brp:persoon:nationaliteit-ingezetene:huisnummer",
-      "betwijfeldeWaarde": "DE",
-      "voorgesteldeWaarde": "NL",
-      "bijlages": []
-    }
-  ],
-  "TerugMeldingResponse":
-  {
-    "terugMeldingReferentie": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "referentiekenmerk": "DGM001",
-    "status": "Gemeld",
-    "beschrijving": "Uw melding wordt binnen 5 werkdagen in behandeling genomen."
+    "terugMeldingGegevens": [
+      {
+        "gegevensElementNaam": "Binnenlands adres ingezetene",
+        "attribuut": "huisnummer",
+        "attribuutUrn": "urn:brp:persoon:binnenlands-adres-ingezetene:huisnummer",
+        "betwijfeldeWaarde": "23",
+        "voorgesteldeWaarde": "21",
+        "bijlages": [
+          {
+            "bestandsnaam": "image001.jpg",
+            "mimeType": "image/jpeg",
+            "bijlageData": "2984a720393290b4d2390",
+            "beschrijving": "screenshot"
+          }
+        ],
+        "eigenvelden": {
+          "product": "TOP50",
+          "hoogteVanafMaaiveld": "4.67"
+        }
+      },
+      {
+        "gegevensElementNaam": "Nationaliteit ingezetene",
+        "attribuut": "nationaliteit",
+        "attribuutUrn": "urn:brp:persoon:nationaliteit-ingezetene:huisnummer",
+        "betwijfeldeWaarde": "DE",
+        "voorgesteldeWaarde": "NL",
+        "bijlages": []
+      }
+    ]
   }
 }

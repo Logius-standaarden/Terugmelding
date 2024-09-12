@@ -3,7 +3,7 @@
   "info": {
     "title": "Terugmeldingen Standaard",
     "description": "Specificatie voor terugmelden op overheidsregistraties",
-    "version": "0.1"
+    "version": "0.2"
   },
   "paths": {
     "/terugmelding": {
@@ -60,14 +60,29 @@
       "TerugMelding": {
         "type": "object",
         "properties": {
-          "TerugMeldingHeader": {
+          "terugMeldingHeader": {
             "$ref": "#/components/schemas/TerugMeldingHeader"
           },
-          "TerugMeldingBody": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "$ref": "#/components/schemas/TerugMeldingGegeven"
+          "terugMeldingBody": {
+            "type": "object",
+            "properties": {
+              "objectIdentificatie": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/ObjectIdentificatie"
+                }
+              },
+              "geometry": {
+                "$ref": "#/components/schemas/Geometry"
+              },
+              "terugMeldingGegevens": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/TerugMeldingGegeven"
+                }
+              }
             }
           }
         }
@@ -75,10 +90,46 @@
       "TerugMeldingHeader": {
         "type": "object",
         "properties": {
-          "RegistratieNaam": {
+          "registratie": {
+            "type": "object",
+            "$ref": "#/components/schemas/Registratie"
+          },
+          "melder": {
+            "type": "object",
+            "$ref": "#/components/schemas/ContactInformatie"
+          },
+          "datumMelding": {
+            "type": "string",
+            "format": "date"
+          },
+          "peilmoment": {
+            "description": "Datum en tijd waarop de waarneming is gedaan.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "referentiekenmerk": {
+            "description": "Een eigen kenmerk voor de terugmelding van de melder.",
             "type": "string"
           },
-          "BasisRegistratieCode": {
+          "meldingBron": {
+            "description": "Via welk kanaal is deze melding gedaan? (app, api, website, etc)",
+            "type": "string"
+          }
+        }
+      },
+      "Registratie": {
+        "type": "object",
+        "properties": {
+          "naam": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "houder": {
+            "type": "string"
+          },
+          "basisRegistratieCode": {
             "description": "Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).",
             "type": "string",
             "oneOf": [
@@ -123,43 +174,47 @@
                 "const": "BRI"
               }
             ]
-          },
-          "melder": {
-            "type": "object",
-            "$ref": "#/components/schemas/ContactInformatie"
-          },
-          "datumMelding": {
-            "type": "string",
-            "format": "date"
-          },
-          "peilmoment": {
-            "description": "Datum en tijd waarop de waarneming is gedaan.",
-            "type": "string",
-            "format": "date-time"
-          },
-          "referentiekenmerk": {
-            "description": "Een eigen kenmerk voor de terugmelding van de melder.",
+          }
+        }
+      },
+      "ObjectIdentificatie": {
+        "description": "De identificerende kenmerken van het object / data-element waar de terugmelding op wordt gedaan. Een of meerdere van deze kenmerken verwijst naar 1 uniek object.",
+        "type": "object",
+        "properties": {
+          "objectType": {
+            "description": "De naam van het type van het object (persoon / gebouw / etc)",
             "type": "string"
+          },
+          "attribuutUrn": {
+            "description": "Het attribuut wat gebruikt wordt om te identificeren op het object (bsn / id / guid) in URN formaat (urn:brp:persoon:bsn).",
+            "type": "string"
+          },
+          "idWaarde": {
+            "description": "De waarde van het identificerende attribuut.",
+            "type": "string"
+          }
+        }
+      },
+      "Geometry": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            }
           }
         }
       },
       "TerugMeldingGegeven": {
         "type": "object",
         "properties": {
-          "gegevensElementSleutelUrn": {
-            "description": "De unieke verwijzing naar de sleutel van het hoofdelement waar de wijziging in plaats moet vinden. (bijv: urn:brp:persoon:bsn).",
-            "type": "string"
-          },
-          "gegevensElementSleutelWaarde": {
-            "description": "De inhoud van het veld gespecificeerd in gegevensElementSleutelUrn.",
-            "type": "string"
-          },
-          "gegevensElementNaam": {
-            "description": "Een eventueel subelement/object waar de wijziging in plaats moet vinden. Gebruik dit als de gegevensElementSleutel hoort bij een ander element dan waar de wijziging moet plaats vinden. (bijv: sleutel hoort bij bedrijf, melding heeft betrekking op bedrijf/adres)",
-            "type": "string"
-          },
-          "attribuut": {
-            "description": "De naam van het attribuut (huisnummer, beschrijving, achternaam).",
+          "objectType": {
+            "description": "Een eventueel subelement/object waar de wijziging in plaats moet vinden. Gebruik dit als de objectIdentificatie hoort bij een ander element dan waar de wijziging moet plaats vinden. (bijv: objectIdentificatie hoort bij bedrijf, melding heeft betrekking op bedrijf/adres)",
             "type": "string"
           },
           "attribuutUrn": {
@@ -171,6 +226,10 @@
           },
           "voorgesteldeWaarde": {
             "type": "string"
+          },
+          "eigenvelden": {
+            "type": "object",
+            "additionalProperties": true
           },
           "bijlages": {
             "type": "array",
