@@ -1,16 +1,15 @@
-var respecConfig = {
+import { loadRespecWithConfiguration } from "https://logius-standaarden.github.io/publicatie/respec/organisation-config.mjs";
+
+loadRespecWithConfiguration({
   useLogo: true,
   useLabel: true,
   license: "cc0",
   specStatus: "WV",
   specType: "HR",
   pubDomain: "dk",
-  shortName: "template",
+  shortName: "terugmelding",
   publishDate: "2023-01-31",
   publishVersion: "0.0.1",
-  title: "Template",
-  // previousPublishVersion: "(none)",
-  content: {"ch01": "informative", "ch02": "", "mermaid": ""},
   editors:
     [
       {
@@ -27,15 +26,5 @@ var respecConfig = {
         companyURL: "https://logius.nl",
       }
     ],
-  github: "https://github.com/Logius-standaarden/ReSpec-template",
-
-
-  // Create PDF and link to file in header (optional):
-  alternateFormats: [
-      {
-          label: "pdf",
-          uri: "template.pdf",
-      },
-  ],
-  postProcess: [window.respecMermaid.createFigures]
-};
+  github: "https://github.com/Logius-standaarden/Terugmelding",
+});
