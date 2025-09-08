@@ -10,6 +10,8 @@ loadRespecWithConfiguration({
   shortName: "terugmelding",
   publishDate: "2023-01-31",
   publishVersion: "0.0.1",
+  latestVersion: "https://logius-standaarden.github.io/Terugmelding/",
+  prevVersion: [],
   editors:
     [
       {
