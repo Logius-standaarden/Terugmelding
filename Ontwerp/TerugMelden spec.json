@@ -3,7 +3,7 @@
   "info": {
     "title": "Terugmeldingen Standaard",
     "description": "Specificatie voor terugmelden op overheidsregistraties",
-    "version": "0.2"
+    "version": "0.3"
   },
   "paths": {
     "/terugmelding": {
@@ -23,7 +23,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ontvangen"
+                  "$ref": "#/components/schemas/TerugMelding"
                 }
               }
             }
@@ -40,6 +40,31 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ontvangen"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/terugmeldingStatus": {
+      "get": {
+        "parameters": [
+          {
+            "name": "terugMeldingReferentie",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
