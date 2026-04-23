@@ -15,17 +15,17 @@ loadRespecWithConfiguration({
   editors:
     [
       {
-        name: "Logius Standaarden",
+        name: "Edwin Wisse",
         company: "Logius",
-        companyURL: "https://logius.nl",
+        companyURL: "https://www.logius.nl",
       }
     ],
   authors:
     [
       {
-        name: "Logius Standaarden",
+        name: "Bas Kooij",
         company: "Logius",
-        companyURL: "https://logius.nl",
+        companyURL: "https://www.logius.nl",
       }
     ],
   github: "https://github.com/Logius-standaarden/Terugmelding",
